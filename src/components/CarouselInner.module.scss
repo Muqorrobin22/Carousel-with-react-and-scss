@@ -23,9 +23,13 @@
     .nav_item {
       width: 50px;
       height: 8px;
-      background-color: white;
+      background-color: rgba($color: #000000, $alpha: 0.6);
       border-radius: 20px;
       cursor: pointer;
+    }
+
+    .nav_item.active {
+      background-color: white;
     }
   }
   // --------------- End of Navigation -------------------//
