@@ -11,9 +11,22 @@
 
   &__navigation {
     position: absolute;
-    bottom: 20%;
-    left: 505;
+    bottom: 12%;
+    left: 50%;
     transform: translateX(-50%);
+    z-index: 10; // this is important
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    padding: 2em;
+
+    .nav_item {
+      width: 50px;
+      height: 8px;
+      background-color: white;
+      border-radius: 20px;
+      cursor: pointer;
+    }
   }
   // --------------- End of Navigation -------------------//
 
