@@ -1,5 +1,11 @@
+import { CarouselInner } from "./components/CarouselInner";
+
 function App() {
-  return <></>;
+  return (
+    <>
+      <CarouselInner />
+    </>
+  );
 }
 
 export default App;
