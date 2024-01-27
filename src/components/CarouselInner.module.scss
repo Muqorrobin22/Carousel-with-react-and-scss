@@ -5,6 +5,17 @@
 
   display: flex;
   max-height: 100vh;
+  position: relative; // this is important
+
+  // --------------- Start of Navigation -------------------//
+
+  &__navigation {
+    position: absolute;
+    bottom: 20%;
+    left: 505;
+    transform: translateX(-50%);
+  }
+  // --------------- End of Navigation -------------------//
 
   &__item {
     position: relative;
