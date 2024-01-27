@@ -33,22 +33,16 @@ export function CarouselInner() {
   }
 
   return (
-    <>
+    <section className={styles.wrapper}>
+      <nav className={styles.carousel__navigation}>
+        <div className={styles.nav_item} onClick={handleScrollFirstImage}></div>
+        <div
+          className={styles.nav_item}
+          onClick={handleScrollSecondImage}
+        ></div>
+        <div className={styles.nav_item} onClick={handleScrollThirdImage}></div>
+      </nav>
       <ul className={styles.carousel_inner}>
-        <nav className={styles.carousel_inner__navigation}>
-          <div
-            className={styles.nav_item}
-            onClick={handleScrollFirstImage}
-          ></div>
-          <div
-            className={styles.nav_item}
-            onClick={handleScrollSecondImage}
-          ></div>
-          <div
-            className={styles.nav_item}
-            onClick={handleScrollThirdImage}
-          ></div>
-        </nav>
         <li className={styles.carousel_inner__item}>
           <img src="/images/image1.jpg" alt="image" ref={firstImage} />
           <div className={styles.carousel__item_text}>
@@ -86,6 +80,6 @@ export function CarouselInner() {
           </div>
         </li>
       </ul>
-    </>
+    </section>
   );
 }

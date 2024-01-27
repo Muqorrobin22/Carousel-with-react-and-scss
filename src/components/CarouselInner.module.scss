@@ -1,16 +1,8 @@
-.carousel_inner {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-
-  display: flex;
-  max-height: 100vh;
-  position: relative; // this is important
-  overflow-x: hidden;
-
+.wrapper {
   // --------------- Start of Navigation -------------------//
+  position: relative;
 
-  &__navigation {
+  .carousel__navigation {
     position: absolute;
     bottom: 12%;
     left: 50%;
@@ -35,27 +27,37 @@
   }
   // --------------- End of Navigation -------------------//
 
-  &__item {
-    position: relative;
-    img {
-      height: 100%;
-      min-width: 100vw;
-      width: 100%;
-      object-fit: cover;
-      background-size: cover;
-      background-position: center;
-    }
+  .carousel_inner {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
-    .carousel__item_text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      backdrop-filter: blur(15px) contrast(0.8);
-      padding: 3em 4em;
-      color: white;
-      border-radius: 10px;
-      text-align: center;
+    display: flex;
+    max-height: 100vh;
+    overflow-x: hidden;
+
+    &__item {
+      position: relative;
+      img {
+        height: 100%;
+        min-width: 100vw;
+        width: 100%;
+        object-fit: cover;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .carousel__item_text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        backdrop-filter: blur(15px) contrast(0.8);
+        padding: 3em 4em;
+        color: white;
+        border-radius: 10px;
+        text-align: center;
+      }
     }
   }
 }
