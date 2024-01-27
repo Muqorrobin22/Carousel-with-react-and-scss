@@ -7,6 +7,7 @@
   max-height: 100vh;
 
   &__item {
+    position: relative;
     img {
       height: 100%;
       min-width: 100vw;
@@ -14,6 +15,13 @@
       object-fit: cover;
       background-size: cover;
       background-position: center;
+    }
+
+    .carousel__item_text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
   }
 }
