@@ -4,6 +4,11 @@ export function CarouselInner() {
   return (
     <>
       <ul className={styles.carousel_inner}>
+        <nav className={styles.carousel_inner__navigation}>
+          <div className={styles.nav_item}></div>
+          <div className={styles.nav_item}></div>
+          <div className={styles.nav_item}></div>
+        </nav>
         <li className={styles.carousel_inner__item}>
           <img src="/images/image1.jpg" alt="image" />
           <div className={styles.carousel__item_text}>
