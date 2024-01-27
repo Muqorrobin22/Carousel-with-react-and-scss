@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./CarouselInner.module.scss";
 
 export function CarouselInner() {
@@ -21,6 +21,16 @@ export function CarouselInner() {
       });
     }
   }
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      const nextImage = (activeImage % 3) + 1; // Assuming have 3 images. Adjust Accordingly
+      setActiveImage(nextImage);
+      scrollToImage(nextImage);
+    }, 3000);
+
+    return () => clearInterval(intervalId);
+  }, [activeImage]);
 
   function GetRefByImageNumber(imageNumber) {
     switch (imageNumber) {
