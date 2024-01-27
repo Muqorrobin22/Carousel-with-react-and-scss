@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import styles from "./CarouselInner.module.scss";
 
 export function CarouselInner() {
@@ -6,30 +6,48 @@ export function CarouselInner() {
   const secondImage = useRef(null);
   const thirdImage = useRef(null);
 
+  const [activeImage, setActiveImage] = useState(1);
+
   console.log(firstImage);
 
+  function scrollToImage(imageNumber) {
+    const ref = GetRefByImageNumber(imageNumber);
+
+    if (ref) {
+      ref.current.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center",
+      });
+    }
+  }
+
+  function GetRefByImageNumber(imageNumber) {
+    switch (imageNumber) {
+      case 1:
+        return firstImage;
+      case 2:
+        return secondImage;
+      case 3:
+        return thirdImage;
+      default:
+        return null;
+    }
+  }
+
   function handleScrollFirstImage() {
-    firstImage.current.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "center",
-    });
+    setActiveImage(1);
+    scrollToImage(1);
   }
 
   function handleScrollSecondImage() {
-    secondImage.current.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "center",
-    });
+    setActiveImage(2);
+    scrollToImage(2);
   }
 
   function handleScrollThirdImage() {
-    thirdImage.current.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "center",
-    });
+    setActiveImage(3);
+    scrollToImage(3);
   }
 
   return (
